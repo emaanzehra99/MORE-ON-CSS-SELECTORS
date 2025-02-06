@@ -1,0 +1,86 @@
+body {
+    background-color:rgb(255, 145, 255);
+}
+
+/* the first child of .box class will get the property only.  */
+.box:first-child {
+    background-color: rgb(166, 166, 240);
+}
+
+/* the first line of class .box will be set to this property. */
+.box::first-line {
+   color: maroon;
+   border: 3px solid black;
+}
+
+/* If we want to apply certain changes to all elements of a main class, we'll use * symbol. */
+.boxes * {
+    border: 2px solid purple;
+    background-color: mediumaquamarine;
+}
+
+/* This is more like a condition, where styles are applied if a certain condition gets true. */
+[data-color="primary"] {
+    margin-top: 50px;
+    padding-top: 45px;
+}
+
+/* This is the grouping of different selectors. */
+a, p, .boxes, [data-color="primary"] {
+    margin-top: 50px;
+    padding-top: 45px;
+}
+
+/* If nth chlid is even number, like 2 or 4, then apply these below styles. */
+.box:nth-child(even) {
+    background-color: rgb(153, 110, 192);
+}
+
+/* If nth chlid is odd number, like 3 or 5, then apply these below styles. */
+.box:nth-child(odd) {
+    background-color: rgb(118, 52, 180);
+    color: white;
+}
+
+/* Starting from last, if the first element (or any other number) is written, styles will apply on it. */
+.box:nth-last-child(3) {
+    background-color: darkturquoise;
+}
+
+/* BEFORE AND AFTER PROPERTIES ARE PSEUDO-ELEMENTS. THEY ARE BELOW! */
+
+/* Before the main container, we can add another element using ::before property. */
+/* Elements ko CSS ke through dynamically insert kiya ja skta hai! */
+.boxes::before {
+    content: "I am a web developer.";
+    border: 2px solid blue;
+}
+
+/* After the main container, we can add another element using ::after property. */
+/* Elements ko CSS ke through dynamically insert kiya ja skta hai! */
+.boxes::after {
+    content: "I am a coder.";
+    border: 2px solid maroon;
+}
+
+/* If a user selects an element and we want to change its color, we use ::selection selector. */
+::selection {
+    background-color: brown;
+    color: white;
+}
+
+/* If we want to apply styles on only the first letter of a class, we apply the styles as below. */
+.box::first-letter{
+    color: rgb(107, 70, 219);
+    font-size: 30px;
+}
+
+input::placeholder {
+    color: maroon;
+    font-size: 13px;
+    display: block;
+}
+
+a {
+    display: block;
+}
